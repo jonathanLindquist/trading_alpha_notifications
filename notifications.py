@@ -1,10 +1,18 @@
 # from functools import partial
 from mac_notifications import client
+from random import choice
 import time
+
+quotes = [
+    "Don't blow up",
+    "Be Patient",
+    "Stick to the plan",
+    "Thaks God! IT's Monday!"
+]
 
 if __name__ == "__main__":
     notification = client.create_notification(
-        title="Another meeting",
+        title=choice(quotes),
         subtitle="Team Standup",
         icon="/Users/jorrick/zoom.png",
         sound="Frog",
