@@ -10,33 +10,40 @@ quotes = [
     "Thaks God! IT's Monday!"
 ]
 
-# 1 hour default
-delay_epoch = [5]
+DEFAULT_DELAY = 3600
 
-def update_delay(temp_epoch: list, new_delay: int):
-    print(f'inside `update_delay`, temp_epoch: {temp_epoch}, delay_epoch: {delay_epoch}')
-    temp_epoch[0] = new_delay
+class Timer:
+    def __init__(self):
+        self.delay_epoch = DEFAULT_DELAY
+
+def update_delay(timer: Timer, new_delay: int):
+    timer.delay_epoch = new_delay
 
 if __name__ == "__main__":
+
+    app_timer = Timer()
+
     while True:
-        temp_epoch = delay_epoch.copy()
-        print(f"beginning of while loop, temp_epoch: {temp_epoch}")
+        time.sleep(app_timer.delay_epoch) # delay for timer
+
+        # reset to default after 1 cycle
+        if app_timer.delay_epoch != DEFAULT_DELAY:
+            app_timer.delay_epoch = DEFAULT_DELAY
+
         notification = client.create_notification(
             title=choice(quotes),
             # subtitle="Team Standup",
             # icon="/Users/jorrick/zoom.png",
             sound="Frog",
-            action_button_str="Snooze for 4 Hours",
-            action_callback=update_delay(temp_epoch, 10),
+            action_button_str="Snooze",
+            action_callback=lambda: update_delay(timer=app_timer, new_delay=14400),
             # reply_button_str="Snooze for 4 Hours",
             # reply_callback=update_delay(temp_epoch, 10),
             # snooze_button_str="Dismiss Message",
             # reply_button_str="Delay Messages"
         )
 
-        print(f'right before time.sleep, temp_epoch: {temp_epoch}')
-        time.sleep(temp_epoch[0])
-        print(f'right after time.sleep, temp_epoch: {temp_epoch}')
+        time.sleep(20) # delay enough time to handle snooze button if user presses it
 
     # Debug loop
     # while client.get_notification_manager().get_active_running_notifications() > 0:
