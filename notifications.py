@@ -4,10 +4,10 @@ from random import choice
 import time
 
 quotes = [
-    "Don't blow up",
-    "Be Patient",
-    "Stick to the plan",
-    "Thaks God! IT's Monday!"
+    "It's okay to be wrong, it's a sin to STAY wrong",
+    "It's not about being right, it's about NOT REMAINING wrong",
+    "Slow down. Is your intuition driving your choices, and is it correct?",
+    "You act too quickly when trying to GROW capital, and too slowly when trying to PROTECT capital"
 ]
 
 DEFAULT_DELAY = 14400
