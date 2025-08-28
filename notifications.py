@@ -10,7 +10,7 @@ quotes = [
     "Thaks God! IT's Monday!"
 ]
 
-DEFAULT_DELAY = 3600
+DEFAULT_DELAY = 14400
 
 class Timer:
     def __init__(self):
@@ -36,14 +36,14 @@ if __name__ == "__main__":
             # icon="/Users/jorrick/zoom.png",
             sound="Frog",
             action_button_str="Snooze",
-            action_callback=lambda: update_delay(timer=app_timer, new_delay=14400),
+            action_callback=lambda: update_delay(timer=app_timer, new_delay=86400),
             # reply_button_str="Snooze for 4 Hours",
             # reply_callback=update_delay(temp_epoch, 10),
             # snooze_button_str="Dismiss Message",
             # reply_button_str="Delay Messages"
         )
 
-        time.sleep(20) # delay enough time to handle snooze button if user presses it
+        time.sleep(100) # delay enough time to handle snooze button if user presses it
 
     # Debug loop
     # while client.get_notification_manager().get_active_running_notifications() > 0:
