@@ -35,11 +35,11 @@ if __name__ == "__main__":
             # subtitle="Team Standup",
             # icon="/Users/jorrick/zoom.png",
             sound="Frog",
-            action_button_str="Snooze",
+            action_button_str="Snooze for 1 day",
             action_callback=lambda: update_delay(timer=app_timer, new_delay=86400),
             # reply_button_str="Snooze for 4 Hours",
             # reply_callback=update_delay(temp_epoch, 10),
-            # snooze_button_str="Dismiss Message",
+            snooze_button_str="Dismiss Message",
             # reply_button_str="Delay Messages"
         )
 
