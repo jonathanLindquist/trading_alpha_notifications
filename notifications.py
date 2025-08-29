@@ -4,10 +4,10 @@ from random import choice
 import time
 
 quotes = [
-    "It's okay to be wrong, it's a sin to STAY wrong",
-    "It's not about being right, it's about NOT REMAINING wrong",
+    "It's okay to be wrong, it's a problem to stay wrong",
+    "It's not about being right, it's about not remaining wrong",
     "Slow down. Is your intuition driving your choices, and is it correct?",
-    "You act too quickly when trying to GROW capital, and too slowly when trying to PROTECT capital"
+    "You act too quickly when trying to grow capital, and too slowly when trying to protect it"
 ]
 
 DEFAULT_DELAY = 14400
